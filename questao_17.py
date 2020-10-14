@@ -8,3 +8,28 @@
 *        Nome do arquivo : questao_17.py                                   *
 ***************************************************************************/
 """
+
+
+class Questao_17():
+    """
+    Docstring
+    """
+
+    def __init__(self):
+        """
+        Constructor
+        """
+
+    def funcname(self):
+        """
+        Docstring
+        """
+        return
+
+    def print_result(self):
+        """
+        This is a printer! It prints.
+        """
+
+
+Questao_17().print_result()
