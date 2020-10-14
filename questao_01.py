@@ -28,6 +28,7 @@ class Questao_01():
         """
         This function receives and orders the input data from users.
         """
+        self.input = int(input('Digite um número inteiro e positivo: '))
         for i in range(1, self.input):
             if i % 2 == 0:
                 pass
@@ -41,10 +42,9 @@ class Questao_01():
         This is a printer! It prints.
         """
         print('===' * 25, '{:^75}'.format('Questão 01'), '===' * 25, sep='\n')
-        self.input = int(input('Digite um número inteiro e positivo: '))
         self.init_class(self.input)
         print('---' * 25,
-              'A soma dos números ímpares de 01 à {} é: {}'.format(
+              'A soma dos números ímpares de 1 a {} é: {}'.format(
                   self.input, self.num),
               '---' * 25,
               '{:>75}'.format('Aluno: Francisco Camello'), sep="\n")
