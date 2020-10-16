@@ -8,6 +8,7 @@
 *        Nome do arquivo : questao_06.py                                   *
 ***************************************************************************/
 """
+import turtle
 
 
 class Questao_06():
@@ -19,17 +20,36 @@ class Questao_06():
         """
         Constructor
         """
+        self.screen = turtle.getscreen()
 
-    def funcname(self):
+        self.squirtle = turtle.Turtle()
+        self.degree = int
+
+    def draw(self, distance, shape):
         """
         Docstring
         """
-        return
+        for i in range(24):
+            self.shape = turtle.shape(shape)
+            self.degree = i*15
+            self.squirtle.setheading(self.degree)
+            self.squirtle.forward(distance)
+            if self.degree == 90 or self.degree == 270:
+                self.squirtle.write('{}º'.format(
+                    self.degree), False, align='center')
+            elif self.degree in range(0, 75) or self.degree in range(285, 360):
+                self.squirtle.write('{}º'.format(
+                    self.degree), False, align='left')
+            else:
+                self.squirtle.write('{}º'.format(
+                    self.degree), False, align='right')
+            self.squirtle.home()
 
     def print_result(self):
         """
         This is a printer! It prints.
         """
+        self.draw(150, 'turtle')
 
 
 Questao_06().print_result()
