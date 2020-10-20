@@ -19,17 +19,31 @@ class Questao_04():
         """
         Constructor
         """
+        self.input = int
+        self.count = 2
+        self.num = 1
 
-    def funcname(self):
+    def init_class(self):
         """
         Docstring
         """
-        return
+        self.input = int(input("Digite o valor de n: "))
+
+        while self.count <= self.input:
+            self.num *= self.count
+            self.count += 1
 
     def print_result(self):
         """
         This is a printer! It prints.
         """
+        print('===' * 25, '{:^75}'.format('Questão 03'), '===' * 25, sep='\n')
+        self.init_class()
+        print(
+            '---' *
+            25, 'O fatorial de {}! é: {}.'.format(self.input, self.num),
+            '---' * 25, '{:>75}'.format('Aluno: Francisco Camello'), sep="\n"
+        )
 
 
 Questao_04().print_result()
