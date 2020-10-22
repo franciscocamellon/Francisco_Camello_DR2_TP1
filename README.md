@@ -64,3 +64,13 @@ Para ela, a tartaruga aumenta o passo andado em um e gira 90 graus após cada mo
 20. Baseando no código criado na questão anterior, crie uma função na qual dado um N obtido através do usuário, sua tartaruga gire 90 + N graus. Teste para 1, 4 e 10 para obter as figuras a seguir.
 
 Teste quais outras figuras você pode gerar com o mesmo código, apenas alterando o ângulo.
+
+
+
+1
+2
+3
+4
+5
+8
+17
