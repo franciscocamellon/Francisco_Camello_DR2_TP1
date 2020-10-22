@@ -20,17 +20,15 @@ class Questao_06():
         """
         Constructor
         """
-        self.screen = turtle.getscreen()
-
+        turtle.shape('turtle')
         self.squirtle = turtle.Turtle()
         self.degree = int
 
-    def draw(self, distance, shape):
+    def draw(self, distance):
         """
         Docstring
         """
         for i in range(24):
-            self.shape = turtle.shape(shape)
             self.degree = i*15
             self.squirtle.setheading(self.degree)
             self.squirtle.forward(distance)
@@ -44,12 +42,16 @@ class Questao_06():
                 self.squirtle.write('{}º'.format(
                     self.degree), False, align='right')
             self.squirtle.home()
+        # to keep turtle screen open when using vscode
+        turtle.done()
+
 
     def print_result(self):
         """
         This is a printer! It prints.
         """
-        self.draw(150, 'turtle')
+        self.draw(150)
 
 
 Questao_06().print_result()
+
