@@ -13,20 +13,19 @@ import turtle
 
 class Questao_06():
     """
-    Docstring
+    This fuction draws the angles by 15° from a circle
     """
 
     def __init__(self):
         """
         Constructor
         """
-        turtle.shape('turtle')
         self.squirtle = turtle.Turtle()
         self.degree = int
 
     def draw(self, distance):
         """
-        Docstring
+        This fuction draws the angles by 15° from a circle
         """
         for i in range(24):
             self.degree = i*15
@@ -42,9 +41,7 @@ class Questao_06():
                 self.squirtle.write('{}º'.format(
                     self.degree), False, align='right')
             self.squirtle.home()
-        # to keep turtle screen open when using vscode
         turtle.done()
-
 
     def print_result(self):
         """
@@ -54,4 +51,3 @@ class Questao_06():
 
 
 Questao_06().print_result()
-

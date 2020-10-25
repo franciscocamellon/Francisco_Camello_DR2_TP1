@@ -19,28 +19,39 @@ class Questao_17():
         """
         Constructor
         """
-        self.input = int
-        self.data = {}
-        self.num = int
+        self.input = ''
+        
+        self.res = ''
 
-    def funcname(self):
+    def init_class(self):
         """
-        Docstring
+        This function receives the input data from users.
         """
-        size = []
-        while len(size) < 3:
-            self.input = int(input('Digite uma string: '))
-            size.append(self.input)
-        size.append(size[0])
-        self.data = tuple(size)
+        # verificar se o numero é inteiro
+        self.num = int(input(' Digite um número inteiro positivo: '))
+        
+        while len(self.input) < self.num:
+            self.input = str(
+            input(' Digite uma string com no mínimo {} caracteres: '.format(self.num)))
+            
+        aux = self.input[:self.num]
+        aux2 = self.input[self.num:]
+        self.res = aux2 + aux
 
-        return print(self.data)
-        return
+        return self.res
 
     def print_result(self):
         """
         This is a printer! It prints.
         """
+        print('===' * 25, 'Questão 17'.center(75), '===' * 25, sep='\n')
+        self.init_class()
+        print(
+            '---' * 25,
+            ' A string {} rotacionada {} posições corresponde a:\n  {}'.format(
+                self.input, self.num, self.res),
+            '---' * 25, 'Aluno: Francisco Camello'.rjust(75), sep="\n"
+        )
 
 
 Questao_17().print_result()

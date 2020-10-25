@@ -25,7 +25,7 @@ class Questao_05():
 
     def init_class(self):
         """
-        Docstring
+        This function receives the input data from users.
         """
         self.input = input("Digite um elemento pertencente ou não à tupla: ")
         for item in range(len(self.tuple)):
@@ -35,6 +35,9 @@ class Questao_05():
                 return item, string
 
     def divide(self):
+        """
+        This function divides the input tuple by half.
+        """
         half = len(self.tuple)//2
         another_half = len(self.tuple)-half
         common_order_1 = self.tuple[:half]
@@ -42,11 +45,17 @@ class Questao_05():
         return common_order_1, common_order_2
 
     def rem(self):
+        """
+        This function removes the input item from tuple.
+        """
         pop = list(self.tuple)
         pop.remove(self.input)
         return tuple(pop)
 
     def reverse(self):
+        """
+        This function reverses the input tuple.
+        """
         rev = list(self.tuple)
         rev.reverse()
         return tuple(rev)

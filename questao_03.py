@@ -25,7 +25,7 @@ class Questao_03():
 
     def init_class(self, number):
         """
-        This function receives and orders the input data from users.
+        This function receives the input data from users.
         """
         self.input = int(input('Digite um número inteiro: '))
 

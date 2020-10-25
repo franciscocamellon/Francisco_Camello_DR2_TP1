@@ -25,7 +25,7 @@ class Questao_02():
 
     def init_class(self, number):
         """
-        This function receives and orders the input data from users.
+        This function receives the input data from users.
         """
         while len(self.data) < 3:
             a = int(input('    Digite agora os anos: '))
@@ -52,9 +52,10 @@ class Questao_02():
               '  Digite sua idade conforme o exemplo: 27 anos 7 meses e 23 dias.', sep='\n')
         self.init_class(self.input)
         print(
-            '---' * 25, 'Parabéns! Você tem {} dias de idade!'.format(self.num),
+            '---' *
+            25, 'Parabéns! Você tem {} dias de idade!'.format(self.num),
             '---' * 25, '{:>75}'.format('Aluno: Francisco Camello'), sep="\n"
-            )
+        )
 
 
 Questao_02().print_result()

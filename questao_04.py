@@ -25,7 +25,7 @@ class Questao_04():
 
     def init_class(self):
         """
-        Docstring
+        This function receives the input data from users.
         """
         self.input = int(input("Digite o valor de n: "))
 
