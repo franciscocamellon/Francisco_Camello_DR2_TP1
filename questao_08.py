@@ -8,35 +8,28 @@
 *        Nome do arquivo : questao_08.py                                   *
 ***************************************************************************/
 """
-
+from validation import Validate
 
 class Questao_08():
-    """
-    Docstring
-    """
+    """ Docstring """
 
     def __init__(self):
-        """
-        Constructor
-        """
-        self.input = int
-        self.data = ()
-        self.num = int
+        """ Constructor. """
+
+        self.input = 0
+        self.data = []
+        self.num = 0
+        self.title = ' Digite o {}º lado do triangulo: '
 
     def init_class(self):
-        """
-        Docstring
-        """
-        size = []
-        while len(size) < 3:
-            self.input = int(input('Digite o primeiro lado do triangulo: '))
-            size.append(self.input)
-        size.append(size[0])
-        self.data = tuple(size)
+        """ Docstring """
 
-        return print(self.data)
+        for i in range(3):
+            self.data.append(Validate().validate_values(self.title.format(i + 1), False))
+        self.data.append(self.data[0])
+        self.data = tuple(self.data)
 
-    def validate_sides(self):
+    def process_data(self):
         self.init_class()
         count = 0
         soma = []
@@ -56,6 +49,9 @@ class Questao_08():
             print('nao pode ser trinagulo')
         return soma
 
+    def validate_sides(self):
+
+
     def validate_types(self):
         data = self.validate_sides()
         if data[0][0] == data[1][0] and data[0][0] == data[2][0]:
@@ -68,9 +64,7 @@ class Questao_08():
             pass
 
     def print_result(self):
-        """
-        This is a printer! It prints.
-        """
+        """ This is a printer! It prints. """
 
 
-Questao_08().validate_types()
+Questao_08().init_class()

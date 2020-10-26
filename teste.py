@@ -26,7 +26,6 @@ Handle_Exception().validate_integer('Digite um inteiro: ')
 #         print('numero decimal')
 #     else:
 #         print('error')
-
 # elif integer.isalpha():
 #     print('string')
 # else:
