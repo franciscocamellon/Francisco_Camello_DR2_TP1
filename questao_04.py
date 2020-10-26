@@ -8,11 +8,12 @@
 *        Nome do arquivo : questao_04.py                                   *
 ***************************************************************************/
 """
-
+from validation import Validate
 
 class Questao_04():
     """
-    Docstring
+     This function uses a WHILE loop to calculate the factorial from a given number
+    by the user.
     """
 
     def __init__(self):
@@ -27,7 +28,7 @@ class Questao_04():
         """
         This function receives the input data from users.
         """
-        self.input = int(input("Digite o valor de n: "))
+        self.input = Validate().validate_factorial(' Digite um número: ')
 
         while self.count <= self.input:
             self.num *= self.count
@@ -37,12 +38,12 @@ class Questao_04():
         """
         This is a printer! It prints.
         """
-        print('===' * 25, '{:^75}'.format('Questão 03'), '===' * 25, sep='\n')
+        print('===' * 25, 'Questão 04'.center(75), '===' * 25, sep='\n')
         self.init_class()
         print(
             '---' *
             25, 'O fatorial de {}! é: {}.'.format(self.input, self.num),
-            '---' * 25, '{:>75}'.format('Aluno: Francisco Camello'), sep="\n"
+            '---' * 25, 'Aluno: Francisco Camello'.rjust(75), sep="\n"
         )
 
 

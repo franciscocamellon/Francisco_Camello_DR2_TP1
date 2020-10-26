@@ -12,7 +12,8 @@ from validation import Validate
 
 class Questao_03():
     """
-    This function calculates the factorial from a given number by the user
+    This function uses a FOR loop to calculate the factorial from a given number
+    by the user.
     """
 
     def __init__(self):
