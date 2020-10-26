@@ -8,6 +8,7 @@
 *        Nome do arquivo : questao_02.py                                   *
 ***************************************************************************/
 """
+from validation import Validate
 
 
 class Questao_02():
@@ -19,21 +20,21 @@ class Questao_02():
         """
         Constructor
         """
-        self.input = int
+        self.input = 0
         self.data = {}
-        self.num = int
+        self.num = 0
 
-    def init_class(self, number):
+    def init_class(self):
         """
         This function receives the input data from users.
         """
         while len(self.data) < 3:
-            a = int(input('    Digite agora os anos: '))
-            self.data['years'] = a
-            m = int(input('    Os meses: '))
-            self.data['months'] = m
-            d = int(input('    E os dias: '))
-            self.data['days'] = d
+            self.data['years'] = Validate().validate_values(
+                '    Digite os anos: ', True)
+            self.data['months'] = Validate().validate_age(
+                '    Digite os meses: ', months=True)
+            self.data['days'] = Validate().validate_age(
+                '    Digite os dias: ', days=True)
         num = []
         for k, v in self.data.items():
             if k == 'years':
@@ -48,13 +49,13 @@ class Questao_02():
         """
         This is a printer! It prints.
         """
-        print('===' * 25, '{:^75}'.format('Questão 02'), '===' * 25,
+        print('===' * 25, 'Questão 02'.center(75), '===' * 25,
               '  Digite sua idade conforme o exemplo: 27 anos 7 meses e 23 dias.', sep='\n')
-        self.init_class(self.input)
+        self.init_class()
         print(
             '---' *
-            25, 'Parabéns! Você tem {} dias de idade!'.format(self.num),
-            '---' * 25, '{:>75}'.format('Aluno: Francisco Camello'), sep="\n"
+            25, '  Parabéns! Você tem {} dias de idade!'.format(self.num),
+            '---' * 25, 'Aluno: Francisco Camello'.rjust(75), sep="\n"
         )
 
 
