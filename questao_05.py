@@ -9,47 +9,46 @@
 ***************************************************************************/
 """
 
+from validation import Validate
+
 
 class Questao_05():
     """
-    Docstring
+    This function search in the tuple for a string given by the user, divides
+    the tuple, removes an item from the tuple and reverses the tuple.
     """
 
     def __init__(self):
         """
         Constructor
         """
-        self.tuple = ('Segunda', True, '15', {1: "maçã"}, [0, 1, 2], 3.1416)
-        self.idx = int
-        self.input = str
+        self.tuple = ('Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta')
+        self.idx = 0
+        self.input = ''
 
     def init_class(self):
         """
         This function receives the input data from users.
         """
-        self.input = input("Digite um elemento pertencente ou não à tupla: ")
-        for item in range(len(self.tuple)):
-            if self.tuple[item] == self.input:
-                self.idx = item
-                string = 'pertence'
-                return item, string
+        self.input = Validate().validate_value_tuple(
+            "Digite um elemento pertencente ou não à tupla: ", self.tuple)
+        self.idx = self.tuple.index(self.input.capitalize())
 
     def divide(self):
         """
         This function divides the input tuple by half.
         """
         half = len(self.tuple)//2
-        another_half = len(self.tuple)-half
         common_order_1 = self.tuple[:half]
-        common_order_2 = self.tuple[another_half:]
+        common_order_2 = self.tuple[half:]
         return common_order_1, common_order_2
 
-    def rem(self):
+    def remove(self):
         """
         This function removes the input item from tuple.
         """
         pop = list(self.tuple)
-        pop.remove(self.input)
+        pop.remove(self.input.capitalize())
         return tuple(pop)
 
     def reverse(self):
@@ -64,7 +63,7 @@ class Questao_05():
         """
         This is a printer! It prints.
         """
-        print('===' * 25, '{:^75}'.format('Questão 05'),
+        print('===' * 25, 'Questão 05'.center(75),
               '===' * 25, 'Dada a seguinte tupla: {}'.format(self.tuple), sep='\n')
         self.init_class()
         print(
@@ -73,9 +72,10 @@ class Questao_05():
                 self.idx),
             "Dividindo-se a tupla obtém-se: \n   tupla 1 {} e \n   tupla 2 {}.".format(
                 self.divide()[0], self.divide()[1]),
-            "Eliminando-se o elemento digitado: \n   {}.".format(self.rem()),
+            "Eliminando-se o elemento digitado: \n   {}.".format(
+                self.remove()),
             "Invertendo a tupla obtém-se: \n   {}.".format(self.reverse()),
-            '---' * 25, '{:>75}'.format('Aluno: Francisco Camello'), sep="\n"
+            '---' * 25, 'Aluno: Francisco Camello'.rjust(75), sep="\n"
         )
 
 
