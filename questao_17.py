@@ -21,17 +21,17 @@ class Questao_17():
         Constructor
         """
         self.input = ''
-        self.res = ''
+        self.input_title = ' Digite uma string com no mínimo {} caracteres: '
+        self.num = 0
         self.num_title = ' Digite um número: '
-        self.input_title = ' Digite uma string com no mínimo {\
-            } caracteres: '.format(self.num)
+        self.res = ''
 
     def init_class(self):
         """
         This function receives the input data from users.
         """
         self.num = Validate().validate_values(self.num_title)
-        self.input = Validate().validate_strings(self.input_title, self.num)
+        self.input = Validate().validate_strings(self.input_title.format(self.num), self.num)
 
         aux = self.input[:self.num]
         aux2 = self.input[self.num:]
