@@ -8,11 +8,11 @@
 *        Nome do arquivo : questao_03.py                                   *
 ***************************************************************************/
 """
-
+from validation import Validate
 
 class Questao_03():
     """
-    Docstring
+    This function calculates the factorial from a given number by the user
     """
 
     def __init__(self):
@@ -27,7 +27,7 @@ class Questao_03():
         """
         This function receives the input data from users.
         """
-        self.input = int(input('Digite um número inteiro: '))
+        self.input = Validate().validate_factorial(' Digite um número: ')
 
         for i in range(1, self.input + 1):
             self.num *= i
@@ -38,11 +38,11 @@ class Questao_03():
         """
         This is a printer! It prints.
         """
-        print('===' * 25, '{:^75}'.format('Questão 03'), '===' * 25, sep='\n')
+        print('===' * 25, 'Questão 03'.center(75), '===' * 25, sep='\n')
         self.init_class(self.input)
         print(
             '---' * 25, 'O fatorial de {} é {}!'.format(self.input, self.num),
-            '---' * 25, '{:>75}'.format('Aluno: Francisco Camello'), sep="\n"
+            '---' * 25, 'Aluno: Francisco Camello'.rjust(75), sep="\n"
         )
 
 
