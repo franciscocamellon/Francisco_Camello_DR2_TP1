@@ -47,7 +47,7 @@ class Questao_10():
         """
         This is a printer! It prints.
         """
-        print('===' * 25, 'Questão 07'.center(75), '===' * 25, sep='\n')
+        print('===' * 25, 'Questão 10'.center(75), '===' * 25, sep='\n')
         self.process_data()
         print('---' * 25, 
             ' Quadrado de lado {} desenhado com sucesso!'.format(self.side_size), 

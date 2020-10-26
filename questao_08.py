@@ -16,55 +16,56 @@ class Questao_08():
     def __init__(self):
         """ Constructor. """
 
-        self.input = 0
         self.data = []
-        self.num = 0
-        self.title = ' Digite o {}º lado do triangulo: '
+        self.title = ' Digite o {}º lado do triângulo: '
+        self.type = ('do tipo Equilátero', 'do tipo Escaleno', 'do tipo Isóceles')
+        self.validate = (' Esses valores formam um triângulo',\
+                         ' Esses valores não formam um triângulo')
+        self.result = []
 
     def init_class(self):
-        """ Docstring """
+        """ This function receives the input data from users. """
+
+        _data = []
 
         for i in range(3):
-            self.data.append(Validate().validate_values(self.title.format(i + 1), False))
-        self.data.append(self.data[0])
+            _data.append(Validate().validate_values(self.title.format(i + 1), False))
+        
+        self.data.append((_data[0], _data[1] + _data[2]))
+        self.data.append((_data[1], _data[0] + _data[2]))
+        self.data.append((_data[2], _data[0] + _data[1]))
         self.data = tuple(self.data)
 
     def process_data(self):
+        """ This function process the input data from init_class. """
+
         self.init_class()
-        count = 0
-        soma = []
-        while count < 3:
-            side = self.data[count]
-            if count == 0:
-                side_sum = self.data[count+1] + self.data[count+2]
-            elif count == 1:
-                side_sum = self.data[count+1] + self.data[count-2]
+        print(self.data)
+
+        for i in range(3):
+            if not self.data[0][0] < self.data[0][1] and self.data[1][0] < self.data[1][1] and self.data[2][0] < self.data[2][1]:
+                self.result.append(self.validate[1])
+                break
             else:
-                side_sum = self.data[count-2] + self.data[count-1]
-            soma.append((side, side_sum))
-            count += 1
-        if soma[0][0] < soma[0][1] and soma[1][0] < soma[1][1] and soma[2][0] < soma[2][1]:
-            print('pode ser trinagulo')
-        else:
-            print('nao pode ser trinagulo')
-        return soma
-
-    def validate_sides(self):
-
-
-    def validate_types(self):
-        data = self.validate_sides()
-        if data[0][0] == data[1][0] and data[0][0] == data[2][0]:
-            return print('triangulo equilatero')
-        elif data[0][0] == data[1][0] and data[0][0] != data[2][0] or data[0][0] != data[1][0] and data[0][0] == data[2][0]:
-            return print('triangulo isosceles')
-        elif data[0][0] != data[1][0] and data[0][0] != data[2][0] and data[1][0] != data[2][0]:
-            return print('triangulo Escaleno')
+                self.result.append(self.validate[0])
+        
+        
+        if self.data[0][0] == self.data[1][0] and self.data[0][0] == self.data[2][0]:
+            self.result.append(self.type[0])
+        elif self.data[0][0] == self.data[1][0] and self.data[0][0] != self.data[2][0] or self.data[0][0] != self.data[1][0] and self.data[0][0] == self.data[2][0]:
+            self.result.append(self.type[2])
+        elif self.data[0][0] != self.data[1][0] and self.data[0][0] != self.data[2][0] and self.data[1][0] != self.data[2][0]:
+            self.result.append(self.type[1])
         else:
             pass
 
     def print_result(self):
         """ This is a printer! It prints. """
 
+        print('===' * 25, 'Questão 08'.center(75), '===' * 25, sep='\n')
+        self.process_data()
+        print('---' * 25, '{0} {1}'.format(self.result[0], self.result[1]),
+              '---' * 25, 'Aluno: Francisco Camello'.rjust(75), sep="\n")
 
-Questao_08().init_class()
+
+Questao_08().print_result()

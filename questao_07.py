@@ -54,17 +54,15 @@ class Questao_07():
             else:
                 self.squirtle.setpos(self.position, 0)
 
+    def print_result(self):
+        """ This is a printer! It prints. """
+
+        print('===' * 25, 'Questão 07'.center(75), '===' * 25, sep='\n')
+        self.process_data()
         print('---' * 25, ' Desenho finalizado com sucesso!', '---' *
               25, 'Aluno: Francisco Camello'.rjust(75), sep="\n")
 
         turtle.done()
-
-    def print_result(self):
-        """
-        This is a printer! It prints.
-        """
-        print('===' * 25, 'Questão 07'.center(75), '===' * 25, sep='\n')
-        self.process_data()
 
 
 Questao_07().print_result()

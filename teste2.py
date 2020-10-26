@@ -1,16 +1,27 @@
-def ex7_rotation(str1):
-    str2=''
-    i = (len(str1)//2)+1
-    print(i)
-    aux = str1[:i]
-    print(aux)
-    # str1[:i] = str1[i:]
-    aux2 = str1[i:]
-    print(aux2)
-    # str1[i:] = aux
-    aux3 = aux2 + aux
-    print(aux3)
-    # return print(str2)
+# rule = {"Atributo com domínio incorreto": {"hid_trecho_drenagem_l": {"allRules": ["regime in (999)"]}}}
+rule = {"Atributo com domínio incorreto": {"hid_trecho_drenagem_l": {"allRules": ("regime in (999)")}}}
 
-s= 'otorrinolaringologista'
-ex7_rotation(s)
+def validateRuleFormat(rule):
+    """
+    This function evaluates the rule format from both rules input
+    and inform to user if it's ok or not.
+    """
+    if isinstance(rule, dict):
+        for description in rule.values():
+            if isinstance(description, dict):
+                for layer in description.values():
+                    if isinstance(layer, dict):
+                        for rules in layer.values():
+                            if isinstance(rules, list):
+                                print('Regra segue o formato padrão!')
+                            else:
+                                print('Regra não segue o formato padrão!')
+                    else:
+                        print('Regra não segue o formato padrão!')
+            else:
+                print('Regra não segue o formato padrão!')
+    else:
+        print('Regra não segue o formato padrão!')
+
+
+validateRuleFormat(rule)
