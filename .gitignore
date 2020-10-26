@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# my stuff
+*teste*.py
+teste2.py
+.vscode
+vscode/settings.json
+.vscode/settings.json
+teste2.py
