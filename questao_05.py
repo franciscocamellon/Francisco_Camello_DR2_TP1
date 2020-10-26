@@ -19,45 +19,36 @@ class Questao_05():
     """
 
     def __init__(self):
-        """
-        Constructor
-        """
+        """ Constructor. """
+
         self.tuple = ('Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta')
+        self.tuple1, self.tuple2, self.pop, self.rev = (), (), (), ()
         self.idx = 0
         self.input = ''
 
     def init_class(self):
-        """
-        This function receives the input data from users.
-        """
+        """ This function receives the input data from users. """
+
         self.input = Validate().validate_value_tuple(
             "Digite um elemento pertencente ou não à tupla: ", self.tuple)
         self.idx = self.tuple.index(self.input.capitalize())
 
-    def divide(self):
-        """
-        This function divides the input tuple by half.
-        """
+    def process_data(self):
+        """ This function divides the input tuple by half. """
+
+        self.init_class()
+
         half = len(self.tuple)//2
-        common_order_1 = self.tuple[:half]
-        common_order_2 = self.tuple[half:]
-        return common_order_1, common_order_2
+        self.tuple1 = self.tuple[:half]
+        self.tuple2 = self.tuple[half:]
 
-    def remove(self):
-        """
-        This function removes the input item from tuple.
-        """
-        pop = list(self.tuple)
-        pop.remove(self.input.capitalize())
-        return tuple(pop)
+        self.pop = list(self.tuple)
+        self.pop.remove(self.input.capitalize())
+        self.pop = tuple(self.pop)
 
-    def reverse(self):
-        """
-        This function reverses the input tuple.
-        """
-        rev = list(self.tuple)
-        rev.reverse()
-        return tuple(rev)
+        self.rev = list(self.tuple)
+        self.rev.reverse()
+        self.rev = tuple(self.rev)
 
     def print_result(self):
         """
@@ -65,16 +56,16 @@ class Questao_05():
         """
         print('===' * 25, 'Questão 05'.center(75),
               '===' * 25, 'Dada a seguinte tupla: {}'.format(self.tuple), sep='\n')
-        self.init_class()
+        self.process_data()
         print(
             '---' * 25,
             'O elemento digitado pertence à tupla e seu índice é: {}.'.format(
                 self.idx),
             "Dividindo-se a tupla obtém-se: \n   tupla 1 {} e \n   tupla 2 {}.".format(
-                self.divide()[0], self.divide()[1]),
+                self.tuple1, self.tuple2),
             "Eliminando-se o elemento digitado: \n   {}.".format(
-                self.remove()),
-            "Invertendo a tupla obtém-se: \n   {}.".format(self.reverse()),
+                self.pop),
+            "Invertendo a tupla obtém-se: \n   {}.".format(self.rev),
             '---' * 25, 'Aluno: Francisco Camello'.rjust(75), sep="\n"
         )
 

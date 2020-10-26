@@ -17,32 +17,32 @@ class Questao_03():
     """
 
     def __init__(self):
-        """
-        Constructor
-        """
-        self.input = int
+        """ Constructor """
+
+        self.input = 0
         self.data = {}
         self.num = 1
 
-    def init_class(self, number):
-        """
-        This function receives the input data from users.
-        """
+    def init_class(self):
+        """ This function receives the input data from users. """
+
         self.input = Validate().validate_factorial(' Digite um número: ')
+
+    def process_data(self):
+        """ This function process the input data from init_class. """
+
+        self.init_class()
 
         for i in range(1, self.input + 1):
             self.num *= i
 
-        return self.num
-
     def print_result(self):
-        """
-        This is a printer! It prints.
-        """
+        """ This is a printer! It prints. """
+
         print('===' * 25, 'Questão 03'.center(75), '===' * 25, sep='\n')
-        self.init_class(self.input)
+        self.process_data()
         print(
-            '---' * 25, 'O fatorial de {} é {}!'.format(self.input, self.num),
+            '---' * 25, ' O fatorial de {} é {}!'.format(self.input, self.num),
             '---' * 25, 'Aluno: Francisco Camello'.rjust(75), sep="\n"
         )
 

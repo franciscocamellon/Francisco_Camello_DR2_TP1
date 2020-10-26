@@ -12,46 +12,47 @@ from validation import Validate
 
 
 class Questao_02():
-    """
-    Docstring
-    """
+    """ This function calculates the age of users in days. """
 
     def __init__(self):
-        """
-        Constructor
-        """
+        """ Constructor. """
+
         self.input = 0
         self.data = {}
         self.num = 0
 
     def init_class(self):
-        """
-        This function receives the input data from users.
-        """
+        """ This function receives the input data from users. """
+
         while len(self.data) < 3:
             self.data['years'] = Validate().validate_values(
-                '    Digite os anos: ', True)
+                '  Digite os anos: ', True)
             self.data['months'] = Validate().validate_age(
-                '    Digite os meses: ', months=True)
+                '  Digite os meses: ', months=True)
             self.data['days'] = Validate().validate_age(
-                '    Digite os dias: ', days=True)
-        num = []
+                '  Digite os dias: ', days=True)
+
+    def process_data(self):
+        """ This function process the input data from init_class. """
+
+        _list = []
+        self.init_class()
+
         for k, v in self.data.items():
             if k == 'years':
-                num.append(v * 365)
+                _list.append(v * 365)
             elif k == 'months':
-                num.append(v * 30)
+                _list.append(v * 30)
             else:
-                num.append(v)
-        self.num = sum(num)
+                _list.append(v)
+        self.num = sum(_list)
 
     def print_result(self):
-        """
-        This is a printer! It prints.
-        """
+        """ This is a printer! It prints. """
+
         print('===' * 25, 'Questão 02'.center(75), '===' * 25,
-              '  Digite sua idade conforme o exemplo: 27 anos 7 meses e 23 dias.', sep='\n')
-        self.init_class()
+              ' Digite sua idade conforme o exemplo: 27 anos 7 meses e 23 dias.', sep='\n')
+        self.process_data()
         print(
             '---' *
             25, '  Parabéns! Você tem {} dias de idade!'.format(self.num),

@@ -59,9 +59,9 @@ class Validate(Custom_Error):
                     return value
                 break
             except ValueError:
-                print('  Erro! Digite um número inteiro positivo!')
+                print('{}Erro! Digite um número inteiro positivo!'.format(' '*3))
             except Less_Than_Zero:
-                print('  Erro! Não é possível calcular fatorial de números negativos!')
+                print('{}Erro! Não é possível calcular fatorial de números negativos!'.format(' '*3))
 
     def validate_value_tuple(self, title, _tuple):
         """ Validates the input data given by the user. """
@@ -76,9 +76,9 @@ class Validate(Custom_Error):
                     raise Not_Found
                 break
             except ValueError:
-                print('  Erro!')
+                print('{}Erro desconhecido, tente novamente!'.format(' '*3))
             except Not_Found:
-                print('  Erro! O elemento digitado não pertence à tupla!')
+                print('{}Erro! O elemento digitado não pertence à tupla!'.format(' '*3))
 
     def validate_values(self, title, zero=True):
         """ Validates the input data given by the user. """
@@ -94,11 +94,11 @@ class Validate(Custom_Error):
                     return value
                 break
             except ValueError:
-                print('  Erro! Digite um número inteiro!')
+                print('{}Erro! Digite um número inteiro!'.format(' '*3))
             except Less_Than_Zero:
-                print('  Erro! Digite um número maior que zero!')
+                print('{}Erro! Digite um número maior que zero!'.format(' '*3))
             except Zero:
-                print('  Erro! Digite um número diferente de zero!')
+                print('{}Erro! Digite um número diferente de zero!'.format(' '*3))
 
     def validate_strings(self, title, length):
         """ Validates the input data given by the user. """
@@ -114,12 +114,12 @@ class Validate(Custom_Error):
                     return value
                 break
             except ValueError:
-                print('  Erro! Digite uma string!')
+                print('{}Erro! Digite uma string!'.format(' '*3))
             except String:
-                print('  Erro! String tem menos de {} caracteres!'.format(length))
+                print('{}Erro! String tem menos de {} caracteres!'.format(length, ' '*3))
             except Equal_Length:
                 print(
-                    '  Aviso! Tamanho da string igual ao número, nenhuma mudança será percebida!', sep="\n")
+                    '{}Aviso! Tamanho da string igual ao número, nenhuma mudança será percebida!', sep="\n".format(' '*3))
 
     def validate_age(self, title, years=False, months=False, days=False):
         """ Validates the input data given by the user. """
@@ -140,8 +140,8 @@ class Validate(Custom_Error):
                         return _days
                 break
             except ValueError:
-                print('  Erro! Digite um número inteiro!')
+                print('{}Erro! Digite um número inteiro!'.format(' '*3))
             except Months:
-                print('  Erro! Aquantidade de meses não pode ser maior que 12!')
+                print('{}Erro! Aquantidade de meses não pode ser maior que 12!'.format(' '*3))
             except Days:
-                print('  Erro! Aquantidade de dias não pode ser maior que 30!')
+                print('{}Erro! Aquantidade de dias não pode ser maior que 30!'.format(' '*3))

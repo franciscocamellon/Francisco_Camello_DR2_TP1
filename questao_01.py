@@ -25,28 +25,32 @@ class Questao_01():
         self.data = []
         self.num = int
 
-    def init_class(self, number):
+    def init_class(self):
         """
         This function receives the input data from users.
         """
 
         self.input = Validate().validate_values(' Digite um número: ')
+
+    def process_data(self):
+        """ This function process the input data from init_class. """
+
+        self.init_class()
+
         for i in range(1, self.input):
             if i % 2 == 0:
                 pass
             else:
                 self.data.append(i)
         self.num = sum(self.data)
-        return self.num
 
     def print_result(self):
-        """
-        This is a printer! It prints.
-        """
+        """ This is a printer! It prints. """
+
         print('===' * 25, 'Questão 01'.center(75), '===' * 25, sep='\n')
-        self.init_class(self.input)
+        self.process_data()
         print('---' * 25,
-              'A soma dos números ímpares de 1 a {} é: {}'.format(
+              '  A soma dos números ímpares de 1 a {} é: {}'.format(
                   self.input, self.num),
               '---' * 25, 'Aluno: Francisco Camello'.rjust(75), sep="\n")
 
